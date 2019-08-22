@@ -1,8 +1,11 @@
-ls -d -- */ | sed -e 's/\///g' > filefolder.txt
-for foldername in `cat filefolder.txt`; do
-	cd "$foldername"
+#!/bin/dash
 
-	#TODO: insert argument
+ls -d -- */ | sed -e 's/\///g' > filedir.txt
+for dirname in `cat filedir.txt`; do
+	cd "$dirname"
+
+	#TODO: insert bash filename as argument
+	../$1
 
 	cd ..
 done
