@@ -1,6 +1,6 @@
 #!/bin/dash
 
-ls -d -- */ | sed -e 's/\///g' > filedir.txt
+ls -d -- */ > filedir.txt
 for dirname in `cat filedir.txt`; do
 	cd "$dirname"
 
