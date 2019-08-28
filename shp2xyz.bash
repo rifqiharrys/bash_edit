@@ -7,10 +7,10 @@ for shpname in `cat fileshp.txt`; do
 	awk '{print $1,$2}' xy.txt > xy_2.txt
 	
 	## titik dalam perum
-	ogrinfo -al ${shpname}.shp | grep "NIKDLM" | sed -e 's/  NIKDLM (Real) = //g'  > z.txt
+	ogrinfo -al ${shpname}.shp | grep "  NIKDLM" | sed -e 's/  NIKDLM (Real) = //g'  > z.txt
 	
 	## garis pantai
-	ogrinfo -al ${shpname}.shp | grep "ELEVA" | sed -e 's/  ELEVAS (Real) = //g' -e 's/  ELEVATION (Real) = //g' >> z.txt
+	ogrinfo -al ${shpname}.shp | grep "  ELEVA" | sed -e 's/  ELEVAS (Real) = //g' -e 's/  ELEVATION (Real) = //g' >> z.txt
 	
 	paste -d" " xy_2.txt z.txt > ${shpname}.txt
 	rm xy.txt xy_2.txt z.txt
