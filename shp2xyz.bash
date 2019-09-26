@@ -15,7 +15,7 @@ for shpname in `cat fileshp.txt`; do
 	paste -d" " xy_2.txt z.txt > ${shpname}.txt
 	rm xy.txt xy_2.txt z.txt
 	
-    ## reference system extraction
+	## reference system extraction
 	ogrinfo -al ${shpname}.shp | grep "\[\"" | sed 's/\ //g' >> ${shpname}_SRS.txt
 	
 done
