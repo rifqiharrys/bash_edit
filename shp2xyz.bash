@@ -1,4 +1,4 @@
-#!/bin/dash
+#!/bin/bash
 
 ls *.shp | sed -e 's/.shp//g' > fileshp.txt
 for shpname in `cat fileshp.txt`; do

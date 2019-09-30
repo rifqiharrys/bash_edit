@@ -1,4 +1,4 @@
-#!/bin/dash
+#!/bin/bash
 
 ls -d -- */ > filedir.txt
 for dirname in `cat filedir.txt`; do
