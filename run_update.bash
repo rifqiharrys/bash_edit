@@ -12,10 +12,10 @@
 # lonf=`ogrinfo -al Border10.shp |grep "Extent" | sed 's/Extent: (//g' | sed 's/)//g' | sed 's/(//g' |sed -e 's/ - / /g' | sed -e 's/,//g'| awk '{print $3+0.05}'`
 # latf=`ogrinfo -al Border10.shp |grep "Extent" | sed 's/Extent: (//g' | sed 's/)//g' | sed 's/(//g' |sed -e 's/ - / /g' | sed -e 's/,//g'| awk '{print $4+0.05}'`
 
-lat0=`gdalinfo BATNAS_105E-110E_000-05N_MSL_v1.0.tif | grep "Lower Left" | awk -F "(" '{print $2}' | awk -F ",  " '{print $2}' | sed -e 's/ //g' -e 's/)//g'`
-lon0=`gdalinfo BATNAS_105E-110E_000-05N_MSL_v1.0.tif | grep "Lower Left" | awk -F "(" '{print $2}' | awk -F ",  " '{print $1}' | sed 's/ //g'`
-latf=`gdalinfo BATNAS_105E-110E_000-05N_MSL_v1.0.tif | grep "Upper Right" | awk -F "(" '{print $2}' | awk -F ",  " '{print $2}' | sed -e 's/ //g' -e 's/)//g'`
-lonf=`gdalinfo BATNAS_105E-110E_000-05N_MSL_v1.0.tif | grep "Upper Right" | awk -F "(" '{print $2}' | awk -F ",  " '{print $1}' | sed 's/ //g'`
+lat0=`gdalinfo BATNAS_105E-110E_000-05N_MSL_v1.0.tif | grep "Lower Left" | awk -F "(" '{print $2}' | awk -F ", " '{print $2}' | sed -e 's/ //g' -e 's/)//g'`
+lon0=`gdalinfo BATNAS_105E-110E_000-05N_MSL_v1.0.tif | grep "Lower Left" | awk -F "(" '{print $2}' | awk -F ", " '{print $1}' | sed 's/ //g'`
+latf=`gdalinfo BATNAS_105E-110E_000-05N_MSL_v1.0.tif | grep "Upper Right" | awk -F "(" '{print $2}' | awk -F ", " '{print $2}' | sed -e 's/ //g' -e 's/)//g'`
+lonf=`gdalinfo BATNAS_105E-110E_000-05N_MSL_v1.0.tif | grep "Upper Right" | awk -F "(" '{print $2}' | awk -F ", " '{print $1}' | sed 's/ //g'`
 
 echo "Processing data dari $lon0 sampai $lonf dan dari $lat0 sampai $latf"
 
