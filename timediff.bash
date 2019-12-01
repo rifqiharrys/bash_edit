@@ -2,7 +2,7 @@
 
 t0=`timedatectl | grep "Local time" | sed -e 's/                      Local time: //g'`
 
-$1
+./$1
 
 t1=`timedatectl | grep "Local time" | sed -e 's/                      Local time: //g'`
 
