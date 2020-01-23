@@ -19,7 +19,7 @@ lonf=`gdalinfo BATNAS_105E-110E_000-05N_MSL_v1.0.tif | grep "Upper Right" | awk 
 
 echo "Processing data dari $lon0 sampai $lonf dan dari $lat0 sampai $latf"
 
-# csh base_process.csh masspoint2_geo.txt input1.grd $lon0 $lonf $lat0 $latf 0.00007 0.00007 10
-# mv final_predicted.grd input1.grd
-# csh update.csh masspoint2_geo.txt input1.grd $lon0 $lonf $lat0 $latf 0.00005 0.00005 5
-# gdal_translate -of "GTiff" final_predicted.grd DTM_FINAL_5m.tif
+csh base_process.csh masspoint2_geo.txt input1.grd $lon0 $lonf $lat0 $latf 0.00007 0.00007 10
+mv final_predicted.grd input1.grd
+csh update.csh masspoint2_geo.txt input1.grd $lon0 $lonf $lat0 $latf 0.00005 0.00005 5
+gdal_translate -of "GTiff" final_predicted.grd DTM_FINAL_5m.tif
