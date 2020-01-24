@@ -1,6 +1,6 @@
 ####convert data BATNAS dari format tif ke grd
 # cd latihan
-# gdal_translate -of "NetCDF" BATNAS_115E-120E_05S-000_MSL_v1.1.tif input1.grd
+gdal_translate -of "NetCDF" BATNAS_115E-120E_05S-000_MSL_v1.1.tif input1.grd
 
 # lon0=`awk 'BEGIN{a=1000}{if ($1<0+a) a=$1} END{print a}' masspoints_geo.txt`
 # lat0=`awk 'BEGIN{a=1000}{if ($2<0+a) a=$2} END{print a}' masspoints_geo.txt`
