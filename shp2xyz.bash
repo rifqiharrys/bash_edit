@@ -13,7 +13,7 @@ for shpname in `cat fileshp.txt`; do
 	ogrinfo -al ${shpname}.shp | grep "  NIKDLM" | sed -e 's/  NIKDLM (Real) = //g'  > z.txt
 	
 	## garis pantai
-	ogrinfo -al ${shpname}.shp | grep "  ELEVA" | sed -e 's/  ELEVASI (Real) = //g' -e 's/  ELEVATION (Real) = //g' >> z.txt
+	# ogrinfo -al ${shpname}.shp | grep "  ELEVA" | sed -e 's/  ELEVASI (Real) = //g' -e 's/  ELEVATION (Real) = //g' >> z.txt
 	
 	# mengubah nilai + menjadi -
 	awk '{print sqrt($1^2)*-1}' z.txt > z2.txt
