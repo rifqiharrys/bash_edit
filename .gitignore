@@ -1,0 +1,9 @@
+# produced data
+*.grd
+*.tif
+*.xyz
+*.xyd
+*.xyzz
+
+# GMT
+gmt.history
